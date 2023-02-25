@@ -1,0 +1,11 @@
+import { Facturas } from "./facturas"
+
+export interface Venta {
+    idVenta?:number,
+    numeroDocumento?:string,
+    tipoPago:string,
+    fechaRegistro?:string,
+    totalTexto:string,
+    facturas:Facturas,
+    idCliente:number
+}
