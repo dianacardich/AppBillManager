@@ -77,7 +77,40 @@ export class ModalUsuarioComponent implements OnInit {
 guardarEditar_Usuario(){
   const _usuario: Usuario = {
     idUsuario: this.datosUsuario == null? 0:this.datosUsuario.idUsuario,
-    nombreCompleto: this.formularioUsuario
+    nombreCompleto: this.formularioUsuario.value.nombreCompleto,
+    correo:this.formularioUsuario.value.correo,
+    idRol:this.formularioUsuario.value.idRol,
+    rolDescripcion: "",
+    clave: this.formularioUsuario.value.clave,
+    esActivo:parseInt( this.formularioUsuario.value.esActivo),
+  }
+
+  // Ejecutar el servicio para guardar, editar un USUARIO
+  if(this.datosUsuario == null){
+    this._usuarioServicio.guardar(_usuario).subscribe({
+      next:(data) =>{
+        if(data.status){
+        this._utilidadServicio.mostrarAlerta("El usuario fue registrado", "Exito");
+        this.modalActual.close("true")
+      }else
+      this._utilidadServicio.mostrarAlerta("No se pudo registrar el usuario","Error")
+    },
+    error:(e) => {}
+    })
+//Logica para poder editar
+
+  }else{
+
+    this._usuarioServicio.editar(_usuario).subscribe({
+      next:(data) =>{
+        if(data.status){
+        this._utilidadServicio.mostrarAlerta("El usuario fue editado", "Exito");
+        this.modalActual.close("true")
+      }else
+      this._utilidadServicio.mostrarAlerta("No se pudo editar el usuario","Error")
+    },
+    error:(e) => {}
+    })
   }
 }
 
