@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  styleUrls: ['./usuario.component.css'],
 })
 export class UsuarioComponent implements OnInit, AfterViewInit {
   
@@ -107,9 +107,5 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
     }
 
   })
-
-
 }
-
-
 }

@@ -72,11 +72,13 @@ export class ModalUsuarioComponent implements OnInit {
       })
     }   
   }
+
 //Metodo para crear, editar un usuario
 
 guardarEditar_Usuario(){
+  
   const _usuario: Usuario = {
-    idUsuario: this.datosUsuario == null? 0:this.datosUsuario.idUsuario,
+    idUsuario: this.datosUsuario == null ? 0:this.datosUsuario.idUsuario,
     nombreCompleto: this.formularioUsuario.value.nombreCompleto,
     correo:this.formularioUsuario.value.correo,
     idRol:this.formularioUsuario.value.idRol,
@@ -87,6 +89,7 @@ guardarEditar_Usuario(){
 
   // Ejecutar el servicio para guardar, editar un USUARIO
   if(this.datosUsuario == null){
+
     this._usuarioServicio.guardar(_usuario).subscribe({
       next:(data) =>{
         if(data.status){
@@ -97,6 +100,7 @@ guardarEditar_Usuario(){
     },
     error:(e) => {}
     })
+
 //Logica para poder editar
 
   }else{
@@ -113,10 +117,5 @@ guardarEditar_Usuario(){
     })
   }
 }
-
-
-
 }
 
-
-throw new Error('Method not implemented.');
