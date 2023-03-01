@@ -22,7 +22,7 @@ export class ModalUsuarioComponent implements OnInit {
   //poder editar, crear usuario
    formularioUsuario: FormGroup;
    ocultarPassword: boolean = true;
-   tituloAccion:string ="Agregar";
+   tituloAccion:string ="Agregar ";
    botonAccion:string = "Guardar";
    listaRoles: Rol[] = [];
 
@@ -45,7 +45,7 @@ export class ModalUsuarioComponent implements OnInit {
     });
 
     if(this.datosUsuario != null){
-      this.tituloAccion = "Editar";
+      this.tituloAccion = "Editar ";
       this.botonAccion =  "Actualizar";
     }
 

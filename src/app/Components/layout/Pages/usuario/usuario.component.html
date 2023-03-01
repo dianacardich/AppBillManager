@@ -1,19 +1,19 @@
-<h1 style="margin:20px 0px 0px 40px">Usuarios</h1>
-<mat-card style="margin: 20px 40px 40px 40px">
 
-    <mat-card-title>
+<h1 style="margin:20px 0px 0px 40px"> Usuarios</h1>
+
+<mat-card style="margin:20px 40px 40px 40px">
+
+    <mat-card-content>
       <button mat-raised-button color="primary" (click)="nuevoUsuario()">
-      <mat-icon mat-list-icon>add</mat-icon> Nuevo Usuario</button>
-    </mat-card-title>
-   
+        <mat-icon mat-list-icon>add</mat-icon>Nuevo Usuario
+      </button>
+    </mat-card-content>
   
-  </mat-card>
+</mat-card>  
    
-  <mat-divider inset></mat-divider>
-  
   <mat-card-content class="dashboard-card-content">
 
-    <mat-form-field >
+    <mat-form-field>
       <mat-label>Buscar</mat-label>
       <input matInput (keyup)="aplicarFiltroTabla($event)" #input>
     </mat-form-field>
