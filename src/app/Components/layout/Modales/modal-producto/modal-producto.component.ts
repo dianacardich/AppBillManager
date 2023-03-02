@@ -19,7 +19,7 @@ export class ModalProductoComponent implements OnInit {
 
   formularioProducto: FormGroup;
   tituloAccion:string ="Agregar ";
-  botonAccion:string = "Guardar";
+  botonAccion:string = "Guardar ";
   listaCategorias: Categoria[] = [];
 
   constructor(
