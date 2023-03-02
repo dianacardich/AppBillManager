@@ -53,7 +53,6 @@ export class ModalUsuarioComponent implements OnInit {
         next:(data) => {
           if(data.status) this.listaRoles = data.value
         },
-
         error:(e) => {}
       })
 
